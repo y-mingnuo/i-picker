@@ -1,0 +1,7 @@
+{
+  "presets": ["env", "es2015", "stage-3"],
+  "plugins": [
+    "transform-object-rest-spread"
+  ],
+  "comments": false
+}
