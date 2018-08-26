@@ -23,7 +23,7 @@
         :value-text="valueText"
         :value-key="valueKey"
         :initial-options="item"
-        :class-name="item.className"
+        :class-name="columns[index].className"
         :default-value="defaultValue[index]"
         :item-height="itemHeight"
         :visible-item-count="visibleItemCount"

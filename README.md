@@ -408,6 +408,60 @@ export default {
 ```
 
 
+#### 自定义展示选项
+
+```html
+<i-picker 
+  v-model="show"
+  :value="values"
+  :columns="columns"
+  @change="onChange"
+  @cancel="onCancel"
+  @confirm="onConfirm"
+  :visibleItemCount="5"
+  toolbar
+  title="iPicker"/>
+```
+
+```javascript
+import icon from './assets/tui.png'
+
+export default {
+  data() {
+    return {
+      values: [1],
+      columns: [
+        {name: '宁波'},
+        {name: `<img src="${icon}" class="y-custom-icon">杭州`},
+        {name: '温州'},
+        {name: '嘉兴'},
+        {name: '湖州'}
+      ]
+    }
+  },
+  methods: {
+    onConfirm (text, value, index, disabled) {
+      this.values = value
+      console.log(`当前值：${text}, 当前索引：${index}`);
+    },
+    onCancel() {
+      console.log('取消');
+    }
+  }
+};
+```
+
+```css
+<style>
+.y-custom-icon {
+  width: 22px;
+  height: 22px;
+  margin: 0 3px 0 0;
+  vertical-align: text-bottom;
+}
+</style>
+```
+
 
 
 
