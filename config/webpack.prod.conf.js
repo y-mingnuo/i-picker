@@ -11,7 +11,9 @@ module.exports = merge(baseConfig, {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].js',
+    library: 'iPicker',
+    libraryTarget: 'umd'
   },
   devtool: '#source-map',
   resolve: {

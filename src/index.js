@@ -1,13 +1,18 @@
 import IPicker from './i-picker.vue'
 
-const iPicker = {
-  install(Vue) {
-    Vue.component(IPicker.name, IPicker)
-  }
+function install (Vue) {
+  if (install.installed) return
+  install.installed = true
+  Vue.component('i-picker', IPicker)
 }
 
-if (typeof window !== 'undefined' && window.Vue) {
-  Vue.use(iPicker)
+const iPicker = {
+  install: install,
+  IPicker
+}
+
+if (typeof window !== undefined && window.Vue) {
+  window.Vue.use(iPicker)
 }
 
 export default iPicker
